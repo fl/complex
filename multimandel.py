@@ -4,10 +4,10 @@ import numpy as np
 plt.style.use("default")
 plt.set_cmap("magma")
 
-RESOLUTION = 20
-ITERATIONS = 15
+RESOLUTION = 300
+ITERATIONS = 16
 
-real = np.linspace(-2.5, 1.5, RESOLUTION)
+real = np.linspace(-2.0, 1.0, RESOLUTION)
 imag = np.linspace(-2.0, 2.0, RESOLUTION)
 
 def iterate(t, c):
@@ -27,7 +27,7 @@ def iterate(t, c):
 
     return out
 
-t = np.linspace(0, 1, 10)
+t = np.linspace(0, 1, 20)
 for i in range(t.shape[0]):
     c = real + 1j * imag[:, None]
     c *= 0.5
