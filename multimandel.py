@@ -35,3 +35,4 @@ for i in range(t.shape[0]):
     out = iterate(t[i], c)
     plt.figure(figsize=(5, 5))
     plt.imsave(f"{i:03d}.png", out, cmap="magma")
+    plt.close()
