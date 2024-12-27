@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-RESOLUTION = 99
-NITER = 20
+RESOLUTION = 50
+NITER = 10
 
 real = np.linspace(-2, 2, RESOLUTION)
 imag = np.linspace(-2, 2, RESOLUTION)
@@ -13,7 +13,7 @@ Output = np.zeros_like(C, dtype=int)
 
 for i in range(NITER):
     Mask[2*np.sin(Z) > 2] = False
-    Z[Mask] = Z[Mask]**2
+    Z[Mask] = Z[Mask]**2 + C[Mask]
     Output += Mask
 Output = Output / NITER
 
